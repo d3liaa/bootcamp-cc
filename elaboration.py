@@ -1,75 +1,58 @@
 import requests
-from datetime import datetime, timedelta
-
-# Mock data -------------------
-stations = [
-    {
-        "stationID": "001",
-        "plugs": {
-            "Plug_01": True,
-            "Plug_02": False,
-            "Plug_03": True
-        }
-    },
-    {
-        "stationID": "002",
-        "plugs": {
-            "Plug_01": True,
-            "Plug_02": True
-        }
-    },
-    {
-        "stationID": "003",
-        "plugs": {
-            "Plug_01": False,
-            "Plug_02": False,
-            "Plug_03": True,
-            "Plug_04": False
-        }
-    }
-]
-# -----------------------------
-
-
-
-
-# Parameters
-time_start = "2024-01-01"
-time_end = "2024-01-07"
-limit = "20"
-where_statement = "scode.in.%28%22ASM_00000183%22%2C%22ASM_00000182%22%29"
+from datetime import datetime
+import json
 
 # Function to get data from API
-def get_data():
-    response = requests.get(f'https://mobility.api.opendatahub.com/v2/flat/EChargingStation/%2A/{time_start}/{time_end}?limit={limit}&offset=0&where={where_statement}&shownull=false&distinct=true&timezone=UTC')
-    return response.json()
-
-
 def get_data_today():
-    # Get current date and time
+    limit = "20"
+    where_statement = "pcode.in.%28%22ASM_00000183%22%2C%22ASM_00000182%22%29"
     now = datetime.now()
-
-    # Format for start time: 00:00 of the current day
     time_start = now.replace(hour=0, minute=0, second=0, microsecond=0).strftime("%Y-%m-%dT%H:%M:%S")[:-3]
-
-    # Format for end time: current date and time
     time_end = now.strftime("%Y-%m-%dT%H:%M:%S")[:-3]
-
-    print(time_start)
-    print(time_end)
-    response = requests.get(f'https://mobility.api.opendatahub.com/v2/flat/EChargingStation/%2A/{time_start}/{time_end}?limit={limit}&offset=0&where={where_statement}&shownull=false&distinct=true&timezone=UTC')
+    
+    print(f"Start Time: {time_start}")
+    print(f"End Time: {time_end}")
+    
+    response = requests.get(
+        f'https://mobility.api.opendatahub.com/v2/flat/EChargingPlug/%2A/{time_start}/{time_end}?limit={limit}&offset=0&where={where_statement}&shownull=false&distinct=true&timezone=UTC')
+    
+    print(f"Response Status Code: {response.status_code}")
+    if response.status_code != 200:
+        print("Failed to retrieve data")
+        return None
     return response.json()
 
-# Main function
-# def main():
-#     data = get_data_today()
-#     print(data)
+# Function to parse data and create structured format with timestamps
+def create_station_structure(data):
+    if data is None:
+        return []
 
+    station_dict = {}
 
-# Run the main function
-# if __name__ == "__main__":
-#     main()
+    for entry in data.get('data', []):
+        station_id = entry.get('pcode')
+        plug_id = entry.get('scode')
+        timestamp = entry.get('_timestamp')
+        is_active = entry.get('mvalue') == 1
 
+        if station_id not in station_dict:
+            station_dict[station_id] = {}
 
-# mvalue == 0, means that it is in use (it is the free value count)
+        if plug_id not in station_dict[station_id]:
+            station_dict[station_id][plug_id] = {}
+        
+        station_dict[station_id][plug_id][timestamp] = is_active
 
+    # Convert dictionary to list format expected
+    stations = [{"stationID": station_id, **plugs} for station_id, plugs in station_dict.items()]
+    
+    return stations
+
+# Example usage
+if __name__ == "__main__":
+    api_data = get_data_today()
+    if api_data:
+        structured_data = create_station_structure(api_data)
+        print(json.dumps(structured_data, indent=2))
+    else:
+        print("No data to process")

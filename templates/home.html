@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Viewer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="header">
+  <h1>My Website</h1>
+  <p>some subtitle</p>
+</div>
+<<<<<<< HEAD
+<div class="row">
+    <div class="col-md-3">
+        <!-- Date Range Picker -->
+        <div class="form-group mt-3">
+            <label for="daterangepicker">Select Date Range:</label>
+            <input type="text" class="form-control" id="daterangepicker">
+        </div>
+    </div>
+</div>
+    
+=======
+
+>>>>>>> 12738d50125d8ee1fc90aa05672f1a1742c346a3
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>TITLE HEADING</h2>
+      <h5>Title description, Dec 7, 2017</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+    <div class="card">
+      <h2>TITLE HEADING</h2>
+      <h5>Title description, Sep 2, 2017</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>Text</h2>
+      <div class="fakeimg" style="height:100px;">Image</div>
+      <p>some text </p>
+    </div>
+    <div class="card">
+      <h3>Text</h3>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+    </div>
+    <div class="card">
+      <h3>Text</h3>
+      <p>Some text..</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Footer</h2>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Include Bootstrap Date Range Picker JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-daterangepicker/daterangepicker.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        // Initialize Bootstrap Date Range Picker
+        $('#daterangepicker').daterangepicker({
+            opens: 'left' // Show the calendar to the left of the input field
+        });
+    });
+</script>
+
+</body>
+</html>
+
+

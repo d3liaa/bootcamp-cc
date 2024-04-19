@@ -12,7 +12,7 @@ body {
 .header {
   padding: 30px;
   text-align: center;
-  background: #ffffff; /* White background */
+  background: #cbe4ff; /* Pastel blue background */
   border-radius: 15px; /* Rounded corners */
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
 }
@@ -25,7 +25,7 @@ body {
 /* Style the top navigation bar */
 .topnav {
   overflow: hidden;
-  background-color: #333333; /* Dark gray background */
+  background-color: #d3d3d3; /* Dark gray background */
   border-radius: 15px; /* Rounded corners */
 }
 
@@ -33,7 +33,7 @@ body {
 .topnav a {
   float: left;
   display: block;
-  color: #ffffff; /* White text color */
+  color: #333333;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -41,11 +41,16 @@ body {
 
 /* Change color on hover */
 .topnav a:hover {
-  background-color: #555555; /* Slightly darker gray on hover */
+  background-color: #c0c0c0; /* Slightly darker gray on hover */
 }
 
 .leftcolumn {   
   float: left;
+  background-color: #cbe4ff; /* White background */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+  margin-top: 20px;
+  padding: 10px;
   width: 74%;
 }
 
@@ -53,7 +58,7 @@ body {
 .rightcolumn {
   float: right;
   width: 25%;
-  background-color: #ffffff; /* White background */
+  background-color: #cbe4ff; /* White background */
   border-radius: 15px; /* Rounded corners */
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
   margin-left: 10px; /* Add space between columns */
@@ -62,7 +67,7 @@ body {
 
 /* Fake image */
 .fakeimg {
-  background-color: #dddddd; /* Light gray background for fake image */
+  background-color: #e0e0e0; /* Light gray background for fake image */
   width: 100%;
   padding: 20px;
   border-radius: 10px; /* Slightly rounded corners */
@@ -71,7 +76,7 @@ body {
 
 /* Add a card effect for articles */
 .card {
-  background-color: #ffffff; /* White background for cards */
+  background-color: #cbe4ff; /* White background for cards */
   padding: 20px;
   margin: 20px;
   border-radius: 15px; /* Rounded corners */
@@ -89,7 +94,7 @@ body {
 .footer {
   padding: 20px;
   text-align: center;
-  background: #dddddd; /* Light gray background */
+  background: #d3d3d3; /* Light gray background */
   margin-top: 20px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
   width: 100%;

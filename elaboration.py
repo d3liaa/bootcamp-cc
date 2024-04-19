@@ -1,6 +1,38 @@
 import requests
 from datetime import datetime, timedelta
 
+# Mock data -------------------
+stations = [
+    {
+        "stationID": "001",
+        "plugs": {
+            "Plug_01": True,
+            "Plug_02": False,
+            "Plug_03": True
+        }
+    },
+    {
+        "stationID": "002",
+        "plugs": {
+            "Plug_01": True,
+            "Plug_02": True
+        }
+    },
+    {
+        "stationID": "003",
+        "plugs": {
+            "Plug_01": False,
+            "Plug_02": False,
+            "Plug_03": True,
+            "Plug_04": False
+        }
+    }
+]
+# -----------------------------
+
+
+
+
 # Parameters
 time_start = "2024-01-01"
 time_end = "2024-01-07"

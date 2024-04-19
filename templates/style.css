@@ -58,7 +58,7 @@ body {
 .rightcolumn {
   float: right;
   width: 25%;
-  background-color: #cbe4ff; /* White background */
+  background-color: #ffffff; /* White background */
   border-radius: 15px; /* Rounded corners */
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
   margin-left: 10px; /* Add space between columns */

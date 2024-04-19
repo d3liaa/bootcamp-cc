@@ -71,3 +71,5 @@ def get_data_today():
 #     main()
 
 
+# mvalue == 0, means that it is in use (it is the free value count)
+

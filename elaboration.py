@@ -22,3 +22,5 @@ if __name__ == "__main__":
     main()
 
 
+# mvalue == 0, means that it is in use (it is the free value count)
+

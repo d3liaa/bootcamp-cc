@@ -18,10 +18,10 @@ def get_data_today():
     now = datetime.now()
 
     # Format for start time: 00:00 of the current day
-    time_start = now.replace(hour=0, minute=0, second=0, microsecond=0).strftime("%Y-%m-%dT%H:%M:%S")[:-3] + "UTC"
+    time_start = now.replace(hour=0, minute=0, second=0, microsecond=0).strftime("%Y-%m-%dT%H:%M:%S")[:-3]
 
     # Format for end time: current date and time
-    time_end = now.strftime("%Y-%m-%dT%H:%M:%S")[:-3] + "UTC"
+    time_end = now.strftime("%Y-%m-%dT%H:%M:%S")[:-3]
 
     print(time_start)
     print(time_end)

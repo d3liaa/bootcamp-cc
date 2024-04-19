@@ -5,31 +5,35 @@
 body {
   font-family: Arial;
   padding: 10px;
-  background: #f1f1f1;
+  background: #f8f8f8; /* Light gray background */
 }
 
 /* Header/Blog Title */
 .header {
   padding: 30px;
   text-align: center;
-  background: white;
+  background: #ffffff; /* White background */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
 }
 
 .header h1 {
   font-size: 50px;
+  color: #333333; /* Dark gray text color */
 }
 
 /* Style the top navigation bar */
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: #333333; /* Dark gray background */
+  border-radius: 15px; /* Rounded corners */
 }
 
 /* Style the topnav links */
 .topnav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: #ffffff; /* White text color */
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -37,37 +41,41 @@ body {
 
 /* Change color on hover */
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: #555555; /* Slightly darker gray on hover */
 }
 
-/* Create two unequal columns that floats next to each other */
-/* Left column */
 .leftcolumn {   
   float: left;
-  width: 75%;
+  width: 74%;
 }
 
 /* Right column */
 .rightcolumn {
-  float: left;
+  float: right;
   width: 25%;
-  background-color: #f1f1f1;
-  padding-left: 20px;
+  background-color: #ffffff; /* White background */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+  margin-left: 10px; /* Add space between columns */
+  margin-top: 20px;
 }
 
 /* Fake image */
 .fakeimg {
-  background-color: #aaa;
+  background-color: #dddddd; /* Light gray background for fake image */
   width: 100%;
   padding: 20px;
+  border-radius: 10px; /* Slightly rounded corners */
+  margin: 2%;
 }
 
 /* Add a card effect for articles */
 .card {
-  background-color: white;
+  background-color: #ffffff; /* White background for cards */
   padding: 20px;
-  margin-top: 20px;
+  margin: 20px;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
 }
 
 /* Clear floats after the columns */
@@ -81,8 +89,10 @@ body {
 .footer {
   padding: 20px;
   text-align: center;
-  background: #ddd;
+  background: #dddddd; /* Light gray background */
   margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+  width: 100%;
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
@@ -90,6 +100,7 @@ body {
   .leftcolumn, .rightcolumn {   
     width: 100%;
     padding: 0;
+    margin-left: 0; /* Reset margin between columns */
   }
 }
 
